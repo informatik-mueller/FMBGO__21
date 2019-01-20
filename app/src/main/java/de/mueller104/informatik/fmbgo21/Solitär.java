@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 
 import com.google.appinventor.components.runtime.Form;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;

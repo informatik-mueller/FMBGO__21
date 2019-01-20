@@ -1,4 +1,8 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
+
+import android.media.session.MediaSession;
+import android.os.Bundle;
+import android.os.ResultReceiver;
 
 import com.google.appinventor.components.runtime.Button;
 import com.google.appinventor.components.runtime.Component;
@@ -16,7 +20,7 @@ public class SimpleRadio extends Form implements HandlesEventDispatching {
     private Button Btn1;
     private Label Space1;
     private Player Player1;
-    private Label Überschrift;
+    private Label Ueberschrift;
     private Button Archiv;
     private static final String RadioUrl = "http://stream.radiosaw.de/stream.mp3";
 
@@ -26,11 +30,20 @@ public class SimpleRadio extends Form implements HandlesEventDispatching {
         Player1 = new Player(this);
         Player1.Source(RadioUrl);
 
-        Überschrift = new Label(this);
-        Überschrift.Text("Schulradio");
-        Überschrift.FontSize(30.0f);
-        Überschrift.FontBold(true);
-        Überschrift.TextColor(0xFF444444);
+        MediaSession mSession = new MediaSession(this, "MusicService");
+        mSession.setCallback(new MediaSession.Callback() {
+            @Override
+            public void onCommand(String command,  Bundle args, ResultReceiver cb) {
+                super.onCommand(command, args, cb);
+            }
+        });
+        mSession.setFlags(MediaSession.FLAG_HANDLES_MEDIA_BUTTONS | MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS);
+
+        Ueberschrift = new Label(this);
+        Ueberschrift.Text("Schulradio");
+        Ueberschrift.FontSize(30.0f);
+        Ueberschrift.FontBold(true);
+        Ueberschrift.TextColor(0xFF444444);
 
         Space1 = new Label(this);
         Space1.HeightPercent(30);

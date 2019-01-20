@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.mueller104.informatik.dsbvertretung" >
+    package="de.mueller104.informatik.fmbgo21" >
 
     <application
         android:allowBackup="true"
@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".Login" >
+        <activity android:name="de.mueller104.informatik.fmbgo21.Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Datumswahl"></activity>
-        <activity android:name=".SimpleRadio"></activity>
-        <activity android:name=".VertretungViewer"></activity>
-        <activity android:name=".MainMenu"></activity>
-        <activity android:name=".NewsActivity"></activity>
-        <activity android:name=".Schulessen"></activity>
-        <activity android:name=".Solitär"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.Datumswahl"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.SimpleRadio"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.VertretungViewer"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.MainMenu"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.NewsActivity"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.Schulessen"></activity>
+        <activity android:name="de.mueller104.informatik.fmbgo21.Solitär"></activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

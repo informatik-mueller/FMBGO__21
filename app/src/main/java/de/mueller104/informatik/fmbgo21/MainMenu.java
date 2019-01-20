@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 
 import android.content.Context;
 import android.content.Intent;
@@ -51,7 +51,7 @@ public class MainMenu extends Form implements HandlesEventDispatching {
         private Notifier PopUp;
         private int EasterEggCounter = 0;
         private boolean isEasterEgg = false;
-        private boolean FirstTimeSolitär = false;
+        private boolean FirstTimeSolitaer = false;
 
         @Override
         public void onBackPressed(){
@@ -165,7 +165,7 @@ public class MainMenu extends Form implements HandlesEventDispatching {
     public boolean dispatchEvent(Component component, String componentName, String eventName, Object[] params){
             if(component.equals(VertretungButton) && eventName.equals("Click")){
 
-                if(netzwerkVerfügbar()) {
+                if(netzwerkVerfuegbar()) {
                 Intent intent = new Intent(this, Datumswahl.class);
                 startActivity(intent);
                 }
@@ -177,7 +177,7 @@ public class MainMenu extends Form implements HandlesEventDispatching {
             }
 
             if(component.equals(RadioButton) && eventName.equals("Click")){
-                if(netzwerkVerfügbar()){
+                if(netzwerkVerfuegbar()){
                     Intent intent = new Intent(this, SimpleRadio.class);
                     startActivity(intent);
                 }
@@ -220,7 +220,7 @@ public class MainMenu extends Form implements HandlesEventDispatching {
         }
 
 
-        private boolean netzwerkVerfügbar() {
+        private boolean netzwerkVerfuegbar() {
             ConnectivityManager connectivityManager =
                     (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -241,12 +241,12 @@ public class MainMenu extends Form implements HandlesEventDispatching {
             editor.commit();
             Toast.makeText(this, "Solitär wurde aktiviert", Toast.LENGTH_SHORT).show();
             checkEasterEgg();
-            FirstTimeSolitär = true;
+            FirstTimeSolitaer = true;
         }
 
         private void solitär(){
             Intent intent = new Intent(this, Solitär.class);
-            intent.putExtra("first_time", FirstTimeSolitär);
+            intent.putExtra("first_time", FirstTimeSolitaer);
             startActivity(intent);
         }
 

@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 
 import android.content.Intent;
 import android.os.StrictMode;

@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 import com.google.appinventor.components.runtime.HandlesEventDispatching;
 import com.google.appinventor.components.runtime.EventDispatcher;
 import com.google.appinventor.components.runtime.Form;
@@ -13,14 +13,10 @@ import com.google.appinventor.components.runtime.TextBox;
 import com.google.appinventor.components.runtime.Button;
 import com.google.appinventor.components.runtime.VerticalArrangement;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.StrictMode;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
 import java.security.MessageDigest;
@@ -188,7 +184,7 @@ public class Login extends Form implements HandlesEventDispatching {
         Konfiguration config = new Konfiguration();
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("AutoLogin", config.getAutoLogin());
-        editor.commit();
+        editor.apply();
         }
 
     public String md5(String s) {

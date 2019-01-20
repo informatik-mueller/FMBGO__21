@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

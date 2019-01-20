@@ -1,4 +1,4 @@
-package de.mueller104.informatik.dsbvertretung;
+package de.mueller104.informatik.fmbgo21;
 
 import com.google.appinventor.components.runtime.Button;
 import com.google.appinventor.components.runtime.Component;
@@ -17,7 +17,7 @@ import de.sematre.api.dsbmobile.*;
 public class NewsActivity extends Form implements HandlesEventDispatching {
 
     private ArrayList<News> Nachrichten;
-    private Label Überschrift; //Java unterstützt Umlaute
+    private Label Ueberschrift;
 
     protected void $define(){
         this.Scrollable(true);
@@ -28,11 +28,11 @@ public class NewsActivity extends Form implements HandlesEventDispatching {
         Nachrichten = dsbMobile.getNews();
         //Nachrichten.add(Nachrichten.get(0));
 
-        Überschrift = new Label(this);
-        Überschrift.FontSize(30.0f);
-        Überschrift.FontBold(true);
-        Überschrift.Text("News");
-        Überschrift.TextColor(0xFF444444);
+        Ueberschrift = new Label(this);
+        Ueberschrift.FontSize(30.0f);
+        Ueberschrift.FontBold(true);
+        Ueberschrift.Text("News");
+        Ueberschrift.TextColor(0xFF444444);
 
         for(int i = 0; i < Nachrichten.size(); i++){
             VerticalArrangement v = new VerticalArrangement(this);
