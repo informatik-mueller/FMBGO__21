@@ -1,1 +1,1 @@
-include ':app', ':LeonardosJavaBridge'
+include ':app'
